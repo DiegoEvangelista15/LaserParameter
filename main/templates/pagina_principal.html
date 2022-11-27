@@ -2,10 +2,12 @@
 {% load static %}
 {% block title %}Main Page{% endblock title %}
 {% block content %}
+<body style="background-image: url('{% static 'media\Screenshot_2.png' %}'); background-size: cover;">
 <p></p>
-<div class="container">
-<h3>Logado: {{ user.username|title }} </h3>
+<div class="container"><font color="red"><h3>Logado: {{ user.username|title }} </h3></font> 
+
 </div>
+</body>
 
 
 {% endblock content %}
