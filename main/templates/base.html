@@ -21,6 +21,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'main_page' %}">Home</a>
               </li>
@@ -34,7 +35,6 @@
                   <li><a class="dropdown-item" href="#">Criar Parâmetro</a></li>
                 </ul>
               </li>
-              <!-- TODO colocar logica de login -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Logado: {{ user.username|title }} 
@@ -48,8 +48,15 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">             
             </form>             
-          </div>          
-        </div>
+          </div>
+
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" > Faça o Login ou Cadastra-se para exibir as opções</a>
+              </li>
+          </div>
+        {% endif %}
+
       </nav>
 <!-- Navbar END -->
 
