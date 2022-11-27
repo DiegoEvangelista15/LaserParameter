@@ -40,7 +40,7 @@
                 Logado: {{ user.username|title }} 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Log Off</a></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}">Log Off</a></li>
                 </ul>
               </li>
             </ul>

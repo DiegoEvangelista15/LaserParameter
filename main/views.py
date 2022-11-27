@@ -1,9 +1,32 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
+from django.contrib import auth, messages
 
-# Create your views here.
+
 
 def index(request):
     return render(request, 'index.html')
+
+def login(request):
+    if request.method == "POST":
+        usuario = request.POST['usuario']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+
+        if password2 == '1234':
+            if usuario == '' or password == '':
+                return redirect('index')
+            user = auth.authenticate(request, username=usuario, password=password)
+            if user is not None:
+                auth.login(request, user)
+                return redirect('main_page')
+    return render(request, 'index.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
+
+def criar_conta(request):
+    ...
 
 def main_page(request):
     return render(request, 'pagina_principal.html')
