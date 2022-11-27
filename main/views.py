@@ -8,9 +8,11 @@ def index(request):
 def main_page(request):
     return render(request, 'pagina_principal.html')
 
+#TODO criar o criar conta e corrigir os htmls
 def criar_conta(request):
     return render(request, 'criar_conta.html')
 
+#TODO criar o criar parâmetro
 def criar_param(request):
     return render(request, 'criar_param.html')
 
