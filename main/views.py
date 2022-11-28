@@ -25,7 +25,10 @@ def logout(request):
     auth.logout(request)
     return redirect('index')
 
-def criar_conta(request):
+def conta_usuario(request):
+    return render(request, 'conta_usuario.html')
+
+def criar_usuario(request):
     ...
 
 def main_page(request):
