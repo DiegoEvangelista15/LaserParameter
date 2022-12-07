@@ -44,7 +44,6 @@ def criar_usuario(request):
         return redirect('index')
     return redirect('conta_usuario')
 
-
 def main_page(request):
     return render(request, 'pagina_principal.html')
 
@@ -52,8 +51,10 @@ def main_page(request):
 def criar_param(request):
     return render(request, 'criar_param.html')
 
+#TODO mesma pagina do listar mas tem os botoes
 def editar_excluir(request):
     return render(request, 'editar_excluir.html')
 
+#TODO fazer dois exemplos primeiro e depois fazer esse
 def listar_param(request):
     return render(request, 'listar_param.html')
