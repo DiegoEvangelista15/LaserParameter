@@ -1,42 +1,44 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Create Parameter{% endblock title %}
+{% extends 'base.html' %} {% load static %} 
+{% block title %}Create Parameter{% endblock title %} 
 {% block content %}
 
-    <section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-00">
-        <div class="col-12 col-md-8 col-lg-6 col-xl-15">
-          <div class="card bg-dark text-white" style="border-radius: 1rem;">
-            <div class="card-body p-5 text-center">
-
-              <div class="mb-md-5 mt-md-4 pb-5">
-
-                <h2 class="fw-bold mb-2 text-uppercase"> Criar Parâmetros</h2>
-                  <p> </p>
-                  <p> </p>
-
-
-                <form action="#" method="post">
-                    {% csrf_token %}
-
-                <div class="form-outline form-white mb-4">
-                    <label class="form-label" for="typePasswordX">Usuario</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="username" class="form-control-lg">
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-00">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-15">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Criar Parâmetros</h2>
+              <p></p>
+              <p></p>
+              <form action="{% url 'criar_param' %}" method="post">
+                {% csrf_token %} {% for field in form %}
+                <div class="col-12 col-lg-12">
+                  <label for="{{ field.id_for_label }}">
+                    <b>{{ field.label }}</b>&emsp;&emsp;{{ field }}
+                  </label>
+                  <br />
+                  <p></p>
                 </div>
 
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Confirmar</button>
-                <a class="btn btn-outline-light btn-lg px-5" href="{% url 'main_page' %}">Voltar</a>
-              </div>
-              <div>
-
-              </div>
-
+                {% endfor %}
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                  Confirmar
+                </button>
+                <a
+                  class="btn btn-outline-light btn-lg px-5"
+                  href="{% url 'main_page' %}"
+                  >Voltar</a
+                >
+              </form>
             </div>
+            <div></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-{% endblock  %}
+{% endblock %}
