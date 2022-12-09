@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.models import User
+from main.models import Parameter
 
 
 
@@ -47,14 +48,19 @@ def criar_usuario(request):
 def main_page(request):
     return render(request, 'pagina_principal.html')
 
-#TODO criar o criar parâmetro
+#TODO criar o criar parâmetro usar o FORM do Django
 def criar_param(request):
     return render(request, 'criar_param.html')
 
-#TODO mesma pagina do listar mas tem os botoes
-def editar_excluir(request):
-    return render(request, 'editar_excluir.html')
 
-#TODO fazer dois exemplos primeiro e depois fazer esse
 def listar_param(request):
-    return render(request, 'listar_param.html')
+    parameter = Parameter.objects.all()
+    return render(request, 'listar_param.html', {'parameter': parameter})
+
+#TODO colocar as unidades
+def acessar_para(request, para_id):
+    para = get_object_or_404(Parameter, pk=para_id)
+    para_acessar = {'para': para}
+    return render(request, 'acessar_para.html', para_acessar)
+
+

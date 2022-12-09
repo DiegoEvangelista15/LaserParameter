@@ -1,6 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Parameter List{% endblock title %}
+
+
 {% block content %}
-<h2>Testes OK - colocar lista aqui para visualizar os parametros de corte</h2>
-{% endblock content %}
+
+    <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-00">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-15">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+              <div class="mb-md-5 mt-md-4 pb-5">
+
+                <h2 class="fw-bold mb-2 text-uppercase">Parâmetros</h2>
+                  <p> </p>
+                  <p> </p>
+
+
+                
+                   
+                {% for n in parameter %}
+                <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="typePasswordX">{{ n.tipo }} {{ n.potencia }} {{ n.espessura }} {{ n.material }} {{ n.gas }} </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-success"><a href="{% url 'acessar_para' n.id %}" style="color: inherit;text-decoration:none";>Acessar</a></button>
+                    <button type="button" class="btn btn-warning"><a href="{% url 'index' %}" style="color: inherit;text-decoration:none";>Editar</a></button>
+                    <button type="button" class="btn btn-danger"><a href="{% url 'index' %}" style="color: inherit;text-decoration:none";>Deletar</a></button>
+                </div>
+                {% endfor %}
+
+                <a class="btn btn-outline-light btn-lg px-5" href="{% url 'criar_param' %}">Criar</a>
+                <a class="btn btn-outline-light btn-lg px-5" href="{% url 'main_page' %}">Voltar</a>
+              </div>
+              <div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock  %}
