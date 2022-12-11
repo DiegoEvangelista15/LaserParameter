@@ -13,42 +13,38 @@
               <div class="mb-md-5 mt-md-4 pb-5">
 
                 <h2 class="fw-bold mb-2 text-uppercase">Parâmetros</h2>
-                <h4>Tipo:{{ para.tipo }} - Potencia:{{ para.potencia }}W - {{ para.espessura }}mm -  {{ para.material }} - {{ para.gas }}</h4>
+                <h4>Tipo: {{ para.tipo }} - Potencia: {{ para.potencia }}W - {{ para.espessura }}mm -  {{ para.material }} - {{ para.gas }}</h4>
                   <p> </p>
                   <p> </p>
-
-
-                <form action="#" method="post">
-                    {% csrf_token %}
 
                 <div class="form-outline form-white mb-4">
-                    <label class="form-label" for="typePasswordX">Cut Speed: {{ para.cut_speed }}</label><p><p>
-                    <label class="form-label" for="typePasswordX">Lift Height: {{ para.lift_height }}</label><p>
-                    <label class="form-label" for="typePasswordX">Cut Height: {{ para.cut_height }}</label><p>
-                    <label class="form-label" for="typePasswordX">Cut Pressure: {{ para.cut_pressure }}</label><p>
-                    <label class="form-label" for="typePasswordX">Peak Power: {{ para.peak_power }}</label><p>
-                    <label class="form-label" for="typePasswordX">Duty Cycle: {{ para.duty_cycle }}</label><p>
-                    <label class="form-label" for="typePasswordX">Pulse Frequency: {{ para.pulse_frequency }}</label><p>
-                    <label class="form-label" for="typePasswordX">Focus: {{ para.focus }}</label><p>
-                    <label class="form-label" for="typePasswordX">Laser on Delay: {{ para.laser_on_delay }}</label><p>
+                    <label class="form-label" for="typePasswordX">Cut Speed: {{ para.cut_speed }} m/min</label><p><p>
+                    <label class="form-label" for="typePasswordX">Lift Height: {{ para.lift_height }} mm</label><p>
+                    <label class="form-label" for="typePasswordX">Cut Height: {{ para.cut_height }} mm</label><p>
+                    <label class="form-label" for="typePasswordX">Cut Pressure: {{ para.cut_pressure }} BAR</label><p>
+                    <label class="form-label" for="typePasswordX">Peak Power: {{ para.peak_power }} %</label><p>
+                    <label class="form-label" for="typePasswordX">Duty Cycle: {{ para.duty_cycle }} %</label><p>
+                    <label class="form-label" for="typePasswordX">Pulse Frequency: {{ para.pulse_frequency }} Hz</label><p>
+                    <label class="form-label" for="typePasswordX">Focus: {{ para.focus }} mm</label><p>
+                    <label class="form-label" for="typePasswordX">Laser on Delay: {{ para.laser_on_delay }} ms</label><p>
                 </div>
-                Pierce
-                <h4>{{ para.pierce_stage }} </h4>
+                {% comment %} Pierce
+                <h4>{{ para.pierce_stage }} </h4> {% endcomment %}
 
                 {% if para.pierce_stage == '1'  %}
 
                 <h4> Piercing 1</h4><br>
                 <div class="form-outline form-white mb-4">
-                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time }}</label><p><p>
-                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height }}</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time }} ms</label><p><p>
+                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height }} mm</label><p>
                   <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow }}</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure }} BAR</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power }} %</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle }} %</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency }} Hz</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus }} mm</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time }} ms</label><p>
+                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow }} ms</label><p>
               </div>
               
               <a class="btn btn-outline-light btn-lg px-5" href="{% url 'listar_param' %}">Voltar</a>
@@ -56,78 +52,78 @@
               {% elif para.pierce_stage == '2'  %}
 
               <h4> Piercing 1</h4><br>
-                <div class="form-outline form-white mb-4">
-                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time }}</label><p><p>
-                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow }}</label><p>
-              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time }} ms</label><p><p>
+                <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas }}</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure }} BAR</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency }} Hz</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time }} ms</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow }} ms</label><p>
+            </div>
 
               <h4> Piercing 2</h4><br>
-                <div class="form-outline form-white mb-4">
-                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time2 }}</label><p><p>
-                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow2 }}</label><p>
-              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time2 }} ms</label><p><p>
+                <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height2 }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas2 }}</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure2 }} BAR</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power2 }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle2 }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency2 }} Hz</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus2 }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time2 }} ms</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow2 }} ms</label><p>
+            </div>
 
               <a class="btn btn-outline-light btn-lg px-5" href="{% url 'listar_param' %}">Voltar</a>
 
               {% elif para.pierce_stage == '3'  %}
 
               <h4> Piercing 1</h4><br>
-                <div class="form-outline form-white mb-4">
-                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time }}</label><p><p>
-                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow }}</label><p>
-              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time }} ms</label><p><p>
+                <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas }}</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure }} BAR</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency }} Hz</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time }} ms</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow }} ms</label><p>
+            </div>
 
               <h4> Piercing 2</h4><br>
-                <div class="form-outline form-white mb-4">
-                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time2 }}</label><p><p>
-                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time2 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow2 }}</label><p>
-              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time2 }} ms</label><p><p>
+                <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height2 }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas2 }}</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure2 }} BAR</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power2 }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle2 }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency2 }} Hz</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus2 }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time2 }} ms</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow2 }} ms</label><p>
+            </div>
 
               <h4> Piercing 3</h4><br>
-                <div class="form-outline form-white mb-4">
-                  <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time3 }}</label><p><p>
-                  <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time3 }}</label><p>
-                  <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow3 }}</label><p>
-              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="typePasswordX">Piercing Step Time: {{ para.step_time3 }} ms</label><p><p>
+                <label class="form-label" for="typePasswordX">Piercing Height: {{ para.piercing_height3 }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Gas: {{ para.piercing_gas3 }}</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pressure: {{ para.piercing_pressure3 }} BAR</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Peak Power: {{ para.piercing_peak_power3 }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Duty Cycle: {{ para.piercing_duty_cycle3 }} %</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Pulse Frequency: {{ para.piercing_frequency3 }} Hz</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Focus: {{ para.piercing_focus3 }} mm</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Time: {{ para.piercing_time3 }} ms</label><p>
+                <label class="form-label" for="typePasswordX">Piercing Extra Blow: {{ para.piercing_extra_blow3 }} ms</label><p>
+            </div>
 
               <a class="btn btn-outline-light btn-lg px-5" href="{% url 'listar_param' %}">Voltar</a>
 
@@ -137,9 +133,7 @@
               </div>
               <div>
                 {% endif %}
-
               </div>
-
             </div>
           </div>
         </div>

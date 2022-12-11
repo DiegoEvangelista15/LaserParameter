@@ -161,12 +161,183 @@ def listar_param(request):
     parameter = Parameter.objects.all()
     return render(request, 'listar_param.html', {'parameter': parameter})
 
-#TODO colocar as unidades
 def acessar_para(request, para_id):
     para = get_object_or_404(Parameter, pk=para_id)
     para_acessar = {'para': para}
     return render(request, 'acessar_para.html', para_acessar)
 
-#TODO fazer editar e deletar param
+def delete_para(request, delete_id):   #TODO colocar uma segurança nessa função
+    deleta_param = get_object_or_404(Parameter, pk=delete_id)
+    deleta_param.delete()
+    return redirect('listar_param')
+
+#TODO fazer editar
+def edita_para(request, edita_id):
+    para = get_object_or_404(Parameter, pk=edita_id)
+    param_edit = {'para' : para}
+    return render(request, 'edita_para.html', param_edit)
+
+def atualiza_para(request):
+    if request.method == "POST":
+        para_id = request.POST['para_id']
+        p = Parameter.objects.get(pk=para_id)
+
+        if request.POST['pierce_stage'] == '3':
+        
+            # basic para
+            p.tipo = request.POST['tipo']
+            p.potencia = request.POST['potencia']
+            p.espessura = request.POST['espessura']
+            p.material = request.POST['material']
+            p.gas = request.POST['gas']
+            p.cut_speed = request.POST['cut_speed']
+            p.lift_height = request.POST['lift_height']
+            p.cut_height = request.POST['cut_height']
+            p.cut_pressure = request.POST['cut_pressure']
+            p.peak_power = request.POST['peak_power']
+            p.duty_cycle = request.POST['duty_cycle']
+            p.pulse_frequency = request.POST['pulse_frequency']
+            p.focus = request.POST['focus']
+            p.laser_on_delay = request.POST['laser_on_delay']
+            p.pierce_stage = request.POST['pierce_stage']
+            
+            # piercing 1
+            p.step_time = request.POST['step_time']
+            p.piercing_height = request.POST['piercing_height']
+            p.piercing_gas = request.POST['piercing_gas']
+            p.piercing_pressure = request.POST['piercing_pressure']
+            p.piercing_peak_power = request.POST['piercing_peak_power']
+            p.piercing_duty_cycle = request.POST['piercing_duty_cycle']
+            p.piercing_frequency = request.POST['piercing_frequency']
+            p.piercing_focus = request.POST['piercing_focus']
+            p.piercing_time = request.POST['piercing_time']
+            p.piercing_extra_blow = request.POST['piercing_extra_blow']
+            # piercing 2
+            p.step_time2 = request.POST['step_time2']
+            p.piercing_height2 = request.POST['piercing_height2']
+            p.piercing_gas2 = request.POST['piercing_gas2']
+            p.piercing_pressure2 = request.POST['piercing_pressure2']
+            p.piercing_peak_power2 = request.POST['piercing_peak_power2']
+            p.piercing_duty_cycle2 = request.POST['piercing_duty_cycle2']
+            p.piercing_frequency2 = request.POST['piercing_frequency2']
+            p.piercing_focus2 = request.POST['piercing_focus2']
+            p.piercing_time2 = request.POST['piercing_time2']
+            p.piercing_extra_blow2 = request.POST['piercing_extra_blow2']
+            # piercing 3
+            p.step_time3 = request.POST['step_time3']
+            p.piercing_height3 = request.POST['piercing_height3']
+            p.piercing_gas3 = request.POST['piercing_gas3']
+            p.piercing_pressure3 = request.POST['piercing_pressure3']
+            p.piercing_peak_power3 = request.POST['piercing_peak_power3']
+            p.piercing_duty_cycle3 = request.POST['piercing_duty_cycle3']
+            p.piercing_frequency3 = request.POST['piercing_frequency3']
+            p.piercing_focus3 = request.POST['piercing_focus3']
+            p.piercing_time3 = request.POST['piercing_time3']
+            p.piercing_extra_blow3 = request.POST['piercing_extra_blow3']
+
+            p.save()
+            return redirect('listar_param')
+
+        elif request.POST['pierce_stage'] == '2':
+        
+            # basic para
+            p.tipo = request.POST['tipo']
+            p.potencia = request.POST['potencia']
+            p.espessura = request.POST['espessura']
+            p.material = request.POST['material']
+            p.gas = request.POST['gas']
+            p.cut_speed = request.POST['cut_speed']
+            p.lift_height = request.POST['lift_height']
+            p.cut_height = request.POST['cut_height']
+            p.cut_pressure = request.POST['cut_pressure']
+            p.peak_power = request.POST['peak_power']
+            p.duty_cycle = request.POST['duty_cycle']
+            p.pulse_frequency = request.POST['pulse_frequency']
+            p.focus = request.POST['focus']
+            p.laser_on_delay = request.POST['laser_on_delay']
+            p.pierce_stage = request.POST['pierce_stage']
+            
+            # piercing 1
+            p.step_time = request.POST['step_time']
+            p.piercing_height = request.POST['piercing_height']
+            p.piercing_gas = request.POST['piercing_gas']
+            p.piercing_pressure = request.POST['piercing_pressure']
+            p.piercing_peak_power = request.POST['piercing_peak_power']
+            p.piercing_duty_cycle = request.POST['piercing_duty_cycle']
+            p.piercing_frequency = request.POST['piercing_frequency']
+            p.piercing_focus = request.POST['piercing_focus']
+            p.piercing_time = request.POST['piercing_time']
+            p.piercing_extra_blow = request.POST['piercing_extra_blow']
+            # piercing 2
+            p.step_time2 = request.POST['step_time2']
+            p.piercing_height2 = request.POST['piercing_height2']
+            p.piercing_gas2 = request.POST['piercing_gas2']
+            p.piercing_pressure2 = request.POST['piercing_pressure2']
+            p.piercing_peak_power2 = request.POST['piercing_peak_power2']
+            p.piercing_duty_cycle2 = request.POST['piercing_duty_cycle2']
+            p.piercing_frequency2 = request.POST['piercing_frequency2']
+            p.piercing_focus2 = request.POST['piercing_focus2']
+            p.piercing_time2 = request.POST['piercing_time2']
+            p.piercing_extra_blow2 = request.POST['piercing_extra_blow2']
+            
+            p.save()
+            return redirect('listar_param')
+
+        elif request.POST['pierce_stage'] == '1':
+        
+            # basic para
+            p.tipo = request.POST['tipo']
+            p.potencia = request.POST['potencia']
+            p.espessura = request.POST['espessura']
+            p.material = request.POST['material']
+            p.gas = request.POST['gas']
+            p.cut_speed = request.POST['cut_speed']
+            p.lift_height = request.POST['lift_height']
+            p.cut_height = request.POST['cut_height']
+            p.cut_pressure = request.POST['cut_pressure']
+            p.peak_power = request.POST['peak_power']
+            p.duty_cycle = request.POST['duty_cycle']
+            p.pulse_frequency = request.POST['pulse_frequency']
+            p.focus = request.POST['focus']
+            p.laser_on_delay = request.POST['laser_on_delay']
+            p.pierce_stage = request.POST['pierce_stage']
+            
+            # piercing 1
+            p.step_time = request.POST['step_time']
+            p.piercing_height = request.POST['piercing_height']
+            p.piercing_gas = request.POST['piercing_gas']
+            p.piercing_pressure = request.POST['piercing_pressure']
+            p.piercing_peak_power = request.POST['piercing_peak_power']
+            p.piercing_duty_cycle = request.POST['piercing_duty_cycle']
+            p.piercing_frequency = request.POST['piercing_frequency']
+            p.piercing_focus = request.POST['piercing_focus']
+            p.piercing_time = request.POST['piercing_time']
+            p.piercing_extra_blow = request.POST['piercing_extra_blow']
+            
+            p.save()
+            return redirect('listar_param')
+
+        else:
+
+            # basic para
+            p.tipo = request.POST['tipo']
+            p.potencia = request.POST['potencia']
+            p.espessura = request.POST['espessura']
+            p.material = request.POST['material']
+            p.gas = request.POST['gas']
+            p.cut_speed = request.POST['cut_speed']
+            p.lift_height = request.POST['lift_height']
+            p.cut_height = request.POST['cut_height']
+            p.cut_pressure = request.POST['cut_pressure']
+            p.peak_power = request.POST['peak_power']
+            p.duty_cycle = request.POST['duty_cycle']
+            p.pulse_frequency = request.POST['pulse_frequency']
+            p.focus = request.POST['focus']
+            p.laser_on_delay = request.POST['laser_on_delay']
+            p.pierce_stage = request.POST['pierce_stage']
+
+            p.save()
+            return redirect('listar_param')
+
 
 

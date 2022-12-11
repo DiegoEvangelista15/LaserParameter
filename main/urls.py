@@ -11,4 +11,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('conta_usuario/', views.conta_usuario, name='conta_usuario'),
     path('acessar_para/<int:para_id>', views.acessar_para, name='acessar_para'),
+    path('delete_para/<int:delete_id>', views.delete_para, name='delete_para'),
+    path('edita_para/<int:edita_id>', views.edita_para, name='edita_para'),
+    path('atualiza_para/', views.atualiza_para, name='atualiza_para'),
 ]

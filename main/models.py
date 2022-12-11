@@ -69,8 +69,7 @@ class Parameter(Base):
         max_digits=8, decimal_places=3, null=True, blank=True)
     piercing_height = models.DecimalField(
         max_digits=8, decimal_places=3, null=True, blank=True)
-    piercing_gas = models.DecimalField(
-        max_digits=8, decimal_places=3, null=True, blank=True)
+    piercing_gas = models.CharField('Gas', max_length=50, choices=GAS_CHOICES, null=True, blank=True)
     piercing_pressure = models.DecimalField(
         max_digits=8, decimal_places=3, null=True, blank=True)
     piercing_peak_power = models.DecimalField(
@@ -91,8 +90,7 @@ class Parameter(Base):
         max_digits=8, decimal_places=3, null=True, blank=True)
     piercing_height2 = models.DecimalField(
         max_digits=8, decimal_places=3, null=True, blank=True)
-    piercing_gas2 = models.DecimalField(
-        max_digits=8, decimal_places=3, null=True, blank=True)
+    piercing_gas2 = models.CharField('Gas', max_length=50, choices=GAS_CHOICES, null=True, blank=True)
     piercing_pressure2 = models.DecimalField(
         max_digits=8, decimal_places=3, null=True, blank=True)
     piercing_peak_power2 = models.DecimalField(
@@ -113,8 +111,7 @@ class Parameter(Base):
         max_digits=8, decimal_places=3, null=True, blank=True)
     piercing_height3 = models.DecimalField(
         max_digits=8, decimal_places=3, null=True, blank=True)
-    piercing_gas3 = models.DecimalField(
-        max_digits=8, decimal_places=3, null=True, blank=True)
+    piercing_gas3 = models.CharField('Gas', max_length=50, choices=GAS_CHOICES, null=True, blank=True)
     piercing_pressure3 = models.DecimalField(
         max_digits=8, decimal_places=3, null=True, blank=True)
     piercing_peak_power3 = models.DecimalField(
