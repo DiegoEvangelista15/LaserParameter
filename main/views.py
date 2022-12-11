@@ -171,7 +171,6 @@ def delete_para(request, delete_id):   #TODO colocar uma segurança nessa funç�
     deleta_param.delete()
     return redirect('listar_param')
 
-#TODO fazer editar
 def edita_para(request, edita_id):
     para = get_object_or_404(Parameter, pk=edita_id)
     param_edit = {'para' : para}
@@ -338,6 +337,9 @@ def atualiza_para(request):
 
             p.save()
             return redirect('listar_param')
+#TODO realizar filtro
+#TODO colocar mensagens de erro
+
 
 
 
